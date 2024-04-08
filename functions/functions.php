@@ -110,6 +110,37 @@
 
    		
 	}
+	function masshash(){
+		echo "\nMass hash fetcher\n\n";
+		echo "Enter path for file with IPs: ";
+		$getfile = fopen('php://stdin','r');
+		$getfile_handle = fgets($getfile);
+		echo "filter_sum key [if input is empty, default key will be used]: ";
+		$getkey = fopen('php://stdin','r');
+		$filter = fgets($getkey);
+
+		if(trim($getfile_handle) == ''){
+			echo "\n[-] You must enter the path for the file.\n";
+			exit(1);
+		}
+
+		if(trim($filter) == ''){
+			$filter = "2kc7DPFf464HG7JCb5CK";
+		}
+		
+		$f = fopen(trim($getfile_handle),'r') or die("\n[-] Unable to open file.\n");
+		if($f){
+			while(($l = fgets($f)) !== false){
+				$hash = md5(trim($l).trim($filter));
+				echo $hash." - ".$filter." [".trim($l)."]\n";
+			}
+			fclose($f);
+		}
+
+
+		exit(1);
+	
+	}
 
 
 ?>
