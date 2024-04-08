@@ -130,11 +130,23 @@
 		
 		$f = fopen(trim($getfile_handle),'r') or die("\n[-] Unable to open file.\n");
 		if($f){
+			$list_info = [];
 			while(($l = fgets($f)) !== false){
+					
 				$hash = md5(trim($l).trim($filter));
+				$info = ["hash"=>$hash];
+				array_push($list_info,$info);
 				echo $hash." - ".$filter." [".trim($l)."]\n";
 			}
+				
 			fclose($f);
+
+			$f = fopen("hash_gen.txt","a") or die("[-] Could not write file with hashes.");
+			foreach($list_info as $hash){
+				fwrite($f,$hash["hash"]."\n");	
+			}
+			fclose($f);
+			echo "[+] Hash file written successfully!";
 		}
 
 
