@@ -1,4 +1,4 @@
-# GuestBook Toolkit 
+# LeakBook
 ⚠️This tool was developed for educational purposes only⚠️
 
 This tool is used to take advantage of the default information left in settings.php from [Guestbook](https://www.phpjunkyard.com/php-guestbook-script.php) version 1.9.0.
