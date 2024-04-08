@@ -5,14 +5,17 @@ This tool is used to take advantage of the default information left in settings.
 
 It operates by basically finding post hash, which is the user's public ip + the 'filter_sum' variable from settings.php hashed with md5 (```md5($_SERVER['REMOTE_ADDR'].$settings['filter_sum']);```).
 
-There are 2 modes:
+There are currently 3 modes:
 
 > 1) Hash finder
 > 2) Non-Admin post manager
+> 3) Mass Hash
 
 Mode 1 finds the post's hash
 
 Mode 2 does the same, but prompts you with 'approve/reject' options, that will enable you to either approve or reject your posts, even if you're not the owner of the website.
+
+Mode 3 takes a wordlist of ips and turnes them into hashes, enabling user to look for other people's posts easily.
 
 # What can be done with the hash
 
