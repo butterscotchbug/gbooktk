@@ -6,6 +6,7 @@
 	
 	echo "[1] Get your hash\n";
 	echo "[2] Approve your post\n";
+	echo "[3] Mass hash\n";
 	echo "\n";
 	
 	/*OPTION PROCESSING*/
@@ -15,7 +16,7 @@
 	$options = fgets($handle_options);
 	$options = intval(trim($options));
 	
-	if($options != 1 && $options != 2){
+	if($options != 1 && $options != 2 && $options != 3){
 		echo "\n[-] Invalid input.\n";
 		return;
 	}
@@ -24,5 +25,7 @@
 			get_hash();
 		case 2:
 			approve_post();
+		case 3:
+			masshash();
 	}
 ?>
