@@ -1,7 +1,7 @@
 <?php
 	include('functions/functions.php');
 	/*BANNER AND OPTIONS*/
-	echo "#################################\n#\t GUESTBOOK TOOLKIT\t#\n#################################\n";
+	echo "#################################\n#\t LEAKBOOK\t#\n#################################\n";
 	echo "By ButterBug\n";
 	
 	echo "[1] Get your hash\n";
